@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Quote Generator</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      html {
+        height: 100%;
+      }
+      body {
+        background-color: #f2e9e4;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      .quote-container {
+        margin: 50px auto;
+        padding: 50px;
+        max-width: 500px;
+        border: 1.5px outset #847e89;
+        border-radius: 15px;
+        background-color: #f2e9e4;
+      }
+      footer {
+        background-color: #1a181b;
+        color: #fff;
+        padding: 5px;
+        text-align: center;
+        margin-top: auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <h1>Quote Generator</h1>
+        <ul>
+          <li><a href="quotes.html">Home</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="favorites-container">
+      <ul id="favoritesList"></ul>
+    </div>
+    <footer>
+      <p>&copy; 2023 Quotes Website. All rights reserved.</p>
+    </footer>
+    <script>
+      let favoriteQuotes = [];
+      //this function is used to display the quotes in my favorites page
+      function displayFavoriteQuotes() {
+        favoritesList = document.getElementById("favoritesList");
+        favoritesList.innerHTML = "";
+
+        if (favoriteQuotes.length === 0) {
+          let noFavoritesMessage = document.createElement("li");
+          noFavoritesMessage.textContent = "No favorite quotes yet.";
+          favoritesList.appendChild(noFavoritesMessage);
+        } else {
+          favoriteQuotes.forEach(function (quote) {
+            let listItem = document.createElement("li");
+            listItem.textContent = '"' + quote.text + '" - ' + quote.author;
+            favoritesList.appendChild(listItem);
+          });
+        }
+      }
+
+      function updateFav() {
+        let savedQuotes = localStorage.getItem("favoriteQuotes");
+        if (savedQuotes !== null && savedQuotes !== -1) {
+          favoriteQuotes = JSON.parse(savedQuotes);
+          displayFavoriteQuotes();
+        } else {
+          favoriteQuotes = [];
+        }
+      }
+
+      function removeQuote(text, author) {
+        let index = favoriteQuotes.findIndex(function (quote) {
+          return quote.text === text && quote.author === author;
+        });
+
+        if (index !== -1) {
+          favoriteQuotes.splice(index, 1);
+          localStorage.setItem(
+            "favoriteQuotes",
+            JSON.stringify(favoriteQuotes)
+          );
+        }
+      }
+      window.addEventListener("load", updateFav());
+    </script>
+  </body>
+</html>

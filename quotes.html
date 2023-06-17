@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Quote Generator</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <h1>Bookish Quote Generator</h1>
+        <ul>
+          <li><a href="Favorites.html">Favorites</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </nav>
+      <div class="welcome">
+        <h2>Welcome to your BookQuote Space</h2>
+        <p>Where you can find quotes that'll cheer you up.</p>
+      </div>
+    </header>
+
+    <div class="services">
+      <div class="quote-container">
+        <p class="quote-text" id="quoteText">
+          Click the button to generate a quote!
+        </p>
+        <p class="quote-author" id="quoteAuthor"></p>
+        <div class="quote-actions">
+          <div class="btn-container">
+            <button class="btn" onclick="generateQuote()">
+              Generate Quote
+            </button>
+            <button class="fav" onclick="addToFavorites()" id="favBtn">
+              Add to Favorites
+            </button>
+          </div>
+        </div>
+      </div>
+      <section class="about">
+        <div id="abt">
+          <h2 id="about">About Us</h2>
+          <p>
+            This website is created by Cerine,micro club's member, in purpose to
+            learn and practice web-dev .
+          </p>
+          <p>Made with love ^^</p>
+        </div>
+      </section>
+    </div>
+    <script src="index.js"></script>
+
+    <footer>
+      <p>&copy; 2023 Quotes Website. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

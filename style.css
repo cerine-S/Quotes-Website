@@ -1,0 +1,113 @@
+body {
+  font-family: "Cormorant Garamond", serif, Montserrat, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #18635b;
+  color: #fff;
+  padding: 5px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 10px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.welcome {
+  text-align: center;
+}
+.about {
+  padding: 50px 0;
+  font-size: 20px;
+  padding-left: 50px;
+  padding-top: 120px;
+}
+
+.services {
+  background-image: url("Books.png");
+  background-size: cover;
+  background-color: #f2e9e4;
+  padding: 50px 0;
+}
+#service {
+  margin-left: 50px;
+}
+.quote-container {
+  margin: 50px auto;
+  padding: 50px;
+  width: 500px;
+  height: 200px;
+  min-height: 200px;
+  max-height: 200px;
+  max-width: 500px;
+  border: 1.5px outset #847e89;
+  border-radius: 15px;
+  background-color: #f2e9e4;
+}
+
+.quote-text {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.quote-author {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 16px;
+  font-style: italic;
+  text-align: center;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 35px;
+  margin-left: 70px;
+  font-size: 16px;
+  color: #000;
+  background-color: #ceb8b6;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.fav {
+  position: absolute;
+  display: inline-block;
+  margin-top: 35px;
+  margin-left: 50px;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #000;
+  background-color: #ceb8b6;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#favBtn.clicked {
+  background-color: #18635b;
+}
+
+.quote-actions {
+  margin-top: 20px;
+}
+
+footer {
+  background-color: #1a181b;
+  color: #fff;
+  padding: 5px;
+  text-align: center;
+}
